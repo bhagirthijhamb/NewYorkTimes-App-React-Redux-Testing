@@ -5,8 +5,9 @@ import ArticleList from './ArticleList';
 const App = () => {
   return(
     <div>
-      <ArticleBox />
-      <ArticleList />
+      Articles here...
+      {/* <ArticleBox />
+      <ArticleList /> */}
     </div>
   )
 }

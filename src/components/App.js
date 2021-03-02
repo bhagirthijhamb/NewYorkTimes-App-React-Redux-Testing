@@ -4,10 +4,13 @@ import ArticleList from './ArticleList';
 
 const App = () => {
   return(
+    // <div>
+    //   Articles here...
+    // </div>
+
     <div>
-      Articles here...
-      {/* <ArticleBox />
-      <ArticleList /> */}
+      <ArticleBox />
+      <ArticleList />
     </div>
   )
 }

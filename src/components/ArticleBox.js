@@ -28,10 +28,11 @@ class ArticleBox extends React.Component {
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.term} onChange={this.handleChange} />
-        <button>Search</button>
-      </form>
+      // <form onSubmit={this.handleSubmit}>
+      //   <input type="text" value={this.state.term} onChange={this.handleChange} />
+      //   <button>Search</button>
+      // </form>
+      <div>Article Box</div>
     )
   }
 }

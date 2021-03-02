@@ -20,7 +20,12 @@ import ArticleList from '../ArticleList';
 // })
 
 
-it('shows a ArticleBox', () => {
+it('shows a ArticleBox component', () => {
   const wrapped = shallow(<App />);
   expect(wrapped.find(ArticleBox).length).toEqual(1);
+});
+
+it('shows a ArticleList component', () => {
+  const wrapped = shallow(<App />);
+  expect(wrapped.find(ArticleList).length).toEqual(1);
 })

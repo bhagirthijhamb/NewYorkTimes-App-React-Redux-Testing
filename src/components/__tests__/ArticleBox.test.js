@@ -2,8 +2,18 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ArticleBox from './../ArticleBox';
 
+let wrapped;
+
+beforeEach(() => {
+  wrapped = mount(<ArticleBox />)
+})
+
+afterEach(() => {
+  wrapped.unmount();
+})
+
 it('has a text area and a button', () => {
-  const wrapped = mount(<ArticleBox />)
+  // const wrapped = mount(<ArticleBox />)
 
   // console.log(wrapped.find('input').length); // 1
   // console.log(wrapped.find('button').length) // 1

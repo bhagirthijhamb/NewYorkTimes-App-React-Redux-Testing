@@ -19,13 +19,19 @@ import ArticleList from '../ArticleList';
 //   ReactDOM.unmountComponentAtNode(div);
 // })
 
+let wrapped;
+
+beforeEach(() => {
+  wrapped = shallow(<App />);
+})
+
 
 it('shows a ArticleBox component', () => {
-  const wrapped = shallow(<App />);
+  // const wrapped = shallow(<App />);
   expect(wrapped.find(ArticleBox).length).toEqual(1);
 });
 
 it('shows a ArticleList component', () => {
-  const wrapped = shallow(<App />);
+  // const wrapped = shallow(<App />);
   expect(wrapped.find(ArticleList).length).toEqual(1);
 })

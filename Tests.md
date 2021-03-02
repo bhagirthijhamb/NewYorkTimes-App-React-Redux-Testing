@@ -4,7 +4,7 @@
 
 # ArticleBox Component
 - Shows an input and a button
-- Users can inout into the input and submit it
+- Users can input into the input and submit it (goal is to check if the coder has wiredup the value property correctly, the call to setState in the callback )
 - When the input is submitted, input shuld get emptied
 
 # ArticleList Component

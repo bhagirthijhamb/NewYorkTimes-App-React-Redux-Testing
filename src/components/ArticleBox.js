@@ -23,16 +23,18 @@ class ArticleBox extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.fetchArticles(this.state.term)
+    this.fetchArticles(this.state.term);
+    this.setState({ term: '' });
   }
 
   render(){
     return(
-      // <form onSubmit={this.handleSubmit}>
-      //   <input type="text" value={this.state.term} onChange={this.handleChange} />
-      //   <button>Search</button>
-      // </form>
-      <div>Article Box</div>
+      // <div>Article Box</div>
+      <form onSubmit={this.handleSubmit}>
+        <h4></h4>
+        <input type="text" value={this.state.term} onChange={this.handleChange} />
+        <button>Search</button>
+      </form>
     )
   }
 }

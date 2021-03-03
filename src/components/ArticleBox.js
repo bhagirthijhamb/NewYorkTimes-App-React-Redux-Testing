@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import * as actions from './../actions';
 
 class ArticleBox extends React.Component {
   state = { term: '' };
@@ -23,7 +25,8 @@ class ArticleBox extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.fetchArticles(this.state.term);
+    // this.fetchArticles(this.state.term);
+    this.props.fetchArticles(this.state.term);
     this.setState({ term: '' });
   }
 
@@ -39,4 +42,4 @@ class ArticleBox extends React.Component {
   }
 }
 
-export default ArticleBox;
+export default connect(null, actions)(ArticleBox);

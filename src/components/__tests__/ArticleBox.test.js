@@ -1,12 +1,17 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import ArticleBox from './../ArticleBox';
+import Root from './../../Root';
 
 let wrapped;
 
 beforeEach(() => {
   // we can use shallow render here because here we care to test just this component, not its child components
-  wrapped = mount(<ArticleBox />)
+  wrapped = mount(
+    <Root>
+      <ArticleBox />
+    </Root>
+  ) 
 })
 
 afterEach(() => {

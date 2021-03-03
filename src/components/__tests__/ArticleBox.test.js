@@ -30,8 +30,23 @@ it('has an input that user can type in', () => {
   wrapped.find('input').simulate('change', {
     target: { value: 'new term' }
   })
+  // on setState() the component does not rerender instantaneously but asychronously at some time in the future
+  // So we force the component to rerender with update()
   wrapped.update();
   expect(wrapped.find('input').prop('value')).toEqual('new term');
+})
+
+it('when the form is submitted, input gets emptied', () => {
+  wrapped.find('input').simulate('change', {
+    target: { value: 'new term' }
+  })
+  wrapped.update();
+  // this expectation should be here, but since we have already checked it in the test above, we can skip it
+  // expect(wrapped.find('input').prop('value')).toEqual('new term');
+
+  wrapped.find('form').simulate('submit')
+  wrapped.update();
+  expect(wrapped.find('input').prop('value')).toEqual('')
 })
 
 

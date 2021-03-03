@@ -8,10 +8,20 @@ import reducers from './reducers';
 // anytime we create an instance of this (Root) component we are gonna create a provider tag and we are gonna create redux store at the same time
 // props.children is a feature of react
 // it allows us to take this component that we just created and wrap other components.
-export default (props) => {
+
+// export default (props) => {
+// destructuring in order to set default value ti initialState for the components that do not pass initialState prop(ArticleList.test.js passes initialState prop )
+export default ({ children, initialState = {}}) => {
   return (
-    <Provider store={createStore(reducers, {})}>
-      {props.children}
+    // <Provider store={createStore(reducers, {})}>
+    // <Provider store={createStore(reducers, props.initialState)}>
+    <Provider store={createStore(reducers, initialState)}>
+      {/* {props.children} */}
+      {children}
     </Provider>
   )
 }
+
+// we customise how the Root component works
+// we say that any of the test files that want to use Root component can optionaly pass an additional argument (additional prop to Root)
+// this props will be utilized to initialize the state within the redux store 

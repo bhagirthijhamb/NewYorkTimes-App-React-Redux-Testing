@@ -24,8 +24,8 @@ it('has a text area and a button', () => {
   // console.log(wrapped.find('input').length); // 1
   // console.log(wrapped.find('button').length) // 1
 
-  expect(wrapped.find('input').length).toEqual(1);
-  expect(wrapped.find('button').length).toEqual(1);
+  // expect(wrapped.find('input').length).toEqual(1);
+  // expect(wrapped.find('button').length).toEqual(1);
 })
 
 // we will programatically interact with the in some fashion.In other words we want to trick the input into thinking that we are typing so text into it.

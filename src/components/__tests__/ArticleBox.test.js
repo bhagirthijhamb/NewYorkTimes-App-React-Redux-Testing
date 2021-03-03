@@ -25,28 +25,40 @@ it('has a text area and a button', () => {
 
 // we will programatically interact with the in some fashion.In other words we want to trick the input into thinking that we are typing so text into it.
 
-it('has an input that user can type in', () => {
-  // simulate() takes an event (string) and a mock (object)
-  wrapped.find('input').simulate('change', {
-    target: { value: 'new term' }
+// describe function is used to group together certain sets of tests that have common setup
+// describe function is also used to limit the scope of beforeEach() 
+describe('the input box', () => {
+  beforeEach(() => {
+    wrapped.find('input').simulate('change', {
+      target: { value: 'new term' }
+    })
+    wrapped.update();
   })
-  // on setState() the component does not rerender instantaneously but asychronously at some time in the future
-  // So we force the component to rerender with update()
-  wrapped.update();
-  expect(wrapped.find('input').prop('value')).toEqual('new term');
+  it('has an input that user can type in', () => {
+    // simulate() takes an event (string) and a mock (object)
+      // wrapped.find('input').simulate('change', {
+      //   target: { value: 'new term' }
+      // })
+    // on setState() the component does not rerender instantaneously but asychronously at some time in the future
+    // So we force the component to rerender with update()
+      // wrapped.update();
+
+    expect(wrapped.find('input').prop('value')).toEqual('new term');
+  })
+
+  it('when the form is submitted, input gets emptied', () => {
+      // wrapped.find('input').simulate('change', {
+      //   target: { value: 'new term' }
+      // })
+      // wrapped.update();
+    // this expectation should be here, but since we have already checked it in the test above, we can skip it
+    // expect(wrapped.find('input').prop('value')).toEqual('new term');
+
+    wrapped.find('form').simulate('submit')
+    wrapped.update();
+    expect(wrapped.find('input').prop('value')).toEqual('')
+  })
 })
 
-it('when the form is submitted, input gets emptied', () => {
-  wrapped.find('input').simulate('change', {
-    target: { value: 'new term' }
-  })
-  wrapped.update();
-  // this expectation should be here, but since we have already checked it in the test above, we can skip it
-  // expect(wrapped.find('input').prop('value')).toEqual('new term');
-
-  wrapped.find('form').simulate('submit')
-  wrapped.update();
-  expect(wrapped.find('input').prop('value')).toEqual('')
-})
 
 

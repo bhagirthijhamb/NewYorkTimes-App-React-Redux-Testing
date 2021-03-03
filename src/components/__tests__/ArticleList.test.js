@@ -21,3 +21,9 @@ it('creates on li per article', () => {
   // console.log(wrapped.find('li').length);
   expect(wrapped.find('li').length).toEqual(2);
 })
+
+it('shows the test for each article', () => {
+  // console.log(wrapped.render().text());
+  expect(wrapped.render().text()).toContain('Article 1');
+  expect(wrapped.render().text()).toContain('Article 2');
+})

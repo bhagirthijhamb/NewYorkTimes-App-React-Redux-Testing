@@ -33,7 +33,7 @@ class ArticleBox extends React.Component {
   render(){
     return(
       // <div>Article Box</div>
-      <form onSubmit={this.handleSubmit}>
+      <form className="fetch-articles" onSubmit={this.handleSubmit}>
         <h4></h4>
         <input type="text" value={this.state.term} onChange={this.handleChange} />
         <button>Search</button>

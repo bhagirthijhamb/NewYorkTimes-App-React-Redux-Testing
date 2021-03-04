@@ -8,10 +8,11 @@ export async function fetchArticles (term){
           'api-key': 'uXiSZXYADR9VvLuUkUqDWxnFIzAtZpy6'
         }
       })
-      console.log(response);
+      // console.log(response);
+      // console.log(response.data.response.docs);
       return {
         type: FETCH_ARTICLES,
-        payload: response
+        payload: response.data.response.docs
       } 
 }
 

@@ -35,13 +35,23 @@ it('can fetch a list of articles and display them', (done) => {
   // Expect to find a list of camments!
   // expect(wrapped.find('li').length).toEqual(10)
   
-  setTimeout(() => {
+  // setTimeout(() => {
+  //   wrapped.update()
+  
+  //   // Expect to find a list of camments!
+  //   expect(wrapped.find('li').length).toEqual(2);
+
+  //   done()
+  //   wrapped.unmount()
+  // }, 100)
+
+   moxios.wait(() => {
     wrapped.update()
 
     // Expect to find a list of camments!
     expect(wrapped.find('li').length).toEqual(2);
 
     done()
-    // wrapped.unmount()
-  }, 1000)
+    wrapped.unmount()
+  })
 })

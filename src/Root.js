@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import reduxPromise from 'redux-promise';
 import reducers from './reducers';
 
 // functional React component with no name
@@ -12,10 +13,13 @@ import reducers from './reducers';
 // export default (props) => {
 // destructuring in order to set default value ti initialState for the components that do not pass initialState prop(ArticleList.test.js passes initialState prop )
 export default ({ children, initialState = {}}) => {
+  const store = createStore(reducers, initialState, applyMiddleware(reduxPromise));
+
   return (
     // <Provider store={createStore(reducers, {})}>
     // <Provider store={createStore(reducers, props.initialState)}>
-    <Provider store={createStore(reducers, initialState)}>
+    // <Provider store={createStore(reducers, initialState)}>
+    <Provider store={store}>
       {/* {props.children} */}
       {children}
     </Provider>

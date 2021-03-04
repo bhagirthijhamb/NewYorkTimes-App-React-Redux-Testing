@@ -6,18 +6,18 @@ import * as actions from './../actions';
 class ArticleBox extends React.Component {
   state = { term: '' };
 
-  fetchArticles = async (term) => {
-    try {
-      const response = axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?', {
-        params: {
-          q: term,
-          'api-key': 'uXiSZXYADR9VvLuUkUqDWxnFIzAtZpy6'
-        }
-      })
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  // fetchArticles = async (term) => {
+  //   try {
+  //     const response = axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?', {
+  //       params: {
+  //         q: term,
+  //         'api-key': 'uXiSZXYADR9VvLuUkUqDWxnFIzAtZpy6'
+  //       }
+  //     })
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
 
   handleChange = (e) => {
     this.setState({ term: e.target.value });
